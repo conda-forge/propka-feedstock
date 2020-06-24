@@ -10,7 +10,7 @@ source:
   sha256: 01b1c68a371ff0449e8e679aca281f71b75eadc2d9d7fb5b227bb929b4d079ec
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - propka3 = propka.run:main
   script: "{{ PYTHON }} -m pip install . -vv"
