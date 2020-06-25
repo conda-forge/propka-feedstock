@@ -1,20 +1,20 @@
 {% set name = "propka" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://files.pythonhosted.org/packages/a3/7b/e935ce37cbf9ac8fe23ec05f8072fb3a63582b20fb01ef0c24502b5d10ba/PROPKA-3.1.0.tar.gz
-  sha256: ada690067c5ad9ca6be412491380929e5275fa41166aa1fb2c820fcc2dfdb619
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 01b1c68a371ff0449e8e679aca281f71b75eadc2d9d7fb5b227bb929b4d079ec
 
 build:
+  skip: True  # [py2k]
   number: 0
-  noarch: python
   entry_points:
-    - propka31 = propka.run:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+    - propka3 = propka.run:main
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -22,14 +22,16 @@ requirements:
     - python
   run:
     - python
-    - setuptools    
 
 test:
   imports:
-    - Tests
     - propka
   commands:
-    - propka31 -h
+    - propka3 --help
+  requires:
+    - numpy
+    - pandas
+    - pytest
 
 about:
   home: http://propka.org
@@ -37,8 +39,9 @@ about:
   license_family: LGPL
   license_file: LICENSE
   summary: Heuristic pKa calculations with ligands
-  dev_url: https://github.com/jensengroup/propka-3.1
+  dev_url: https://github.com/jensengroup/propka
 
 extra:
   recipe-maintainers:
     - tsenapathi
+    - sobolevnrm
