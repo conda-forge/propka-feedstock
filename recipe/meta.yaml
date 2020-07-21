@@ -10,7 +10,6 @@ source:
   sha256: 2fc79dbd921c2e0db01692dc6775a3a693be6ca7320bd811b03a14a3dda10779
 
 build:
-  noarch: python
   skip: True  # [py2k]
   number: 0
   entry_points:
