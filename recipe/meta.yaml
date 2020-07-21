@@ -7,9 +7,10 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 01b1c68a371ff0449e8e679aca281f71b75eadc2d9d7fb5b227bb929b4d079ec
+  sha256: 2fc79dbd921c2e0db01692dc6775a3a693be6ca7320bd811b03a14a3dda10779
 
 build:
+  noarch: python
   skip: True  # [py2k]
   number: 0
   entry_points:
