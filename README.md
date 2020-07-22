@@ -5,7 +5,7 @@ Home: http://propka.org
 
 Package license: GNU Lesser General Public v2 (LGPLv2)
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Heuristic pKa calculations with ligands
 
