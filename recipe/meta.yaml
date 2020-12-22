@@ -20,6 +20,7 @@ requirements:
   host:
     - pip
     - python
+    - setuptools
   run:
     - python
 
@@ -33,7 +34,7 @@ test:
     - numpy
     - pandas
     - pytest
-
+    
 about:
   home: http://propka.org
   license: GNU Lesser General Public v2 (LGPLv2)
