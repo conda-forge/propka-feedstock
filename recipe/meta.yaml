@@ -30,7 +30,6 @@ test:
     - propka3 --help
   requires:
     - numpy
-    - pandas
     - pytest
 
 about:
