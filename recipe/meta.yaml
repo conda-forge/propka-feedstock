@@ -2,19 +2,18 @@
 {% set version = "3.4.0" %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: f19c2e145faa7eab000ce056a9058b8a30adba6970705047bb4fb7ba7570b020
 
 build:
-  skip: true  # [py2k]
   number: 0
   entry_points:
     - propka3 = propka.run:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -26,6 +25,7 @@ requirements:
 test:
   imports:
     - propka
+    - tests
   commands:
     - propka3 --help
   requires:
