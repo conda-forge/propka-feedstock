@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  preserve_egg_dir: True
   entry_points:
     - propka3 = propka.run:main
   script: "{{ PYTHON }} -m pip install . -vv"
@@ -30,6 +31,7 @@ test:
     - propka3 --help
   requires:
     - numpy
+    - pandas
     - pytest
 
 about:
