@@ -1,20 +1,20 @@
 {% set name = "propka" %}
-{% set version = "3.4.0" %}
+{% set version = "3.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: f19c2e145faa7eab000ce056a9058b8a30adba6970705047bb4fb7ba7570b020
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 0f32bbcafed56e94cc9d3fdb05d9c2faa7485d8a5779aaa79049b9ce0ab052fa
 
 build:
   skip: true  # [py2k]
-  number: 4
+  number: 0
   entry_points:
     - propka3 = propka.run:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -37,7 +37,7 @@ test:
     - pandas
     - pytest
     - setuptools
-    
+
 about:
   home: http://propka.org
   license: GNU Lesser General Public v2 (LGPLv2)
