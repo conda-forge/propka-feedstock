@@ -1,5 +1,5 @@
 {% set name = "propka" %}
-{% set version = "3.5.0" %}
+{% set version = "3.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0f32bbcafed56e94cc9d3fdb05d9c2faa7485d8a5779aaa79049b9ce0ab052fa
+  sha256: d8083b58d8c4c553ff8704c706190fe37ff82253adcd6e53b31d8ad7d6d52257
 
 build:
   skip: true  # [py2k]
