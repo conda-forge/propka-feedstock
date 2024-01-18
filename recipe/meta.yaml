@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
   run:
-    - python
+    - python >=3.8
 
 test:
   imports:
@@ -37,7 +37,7 @@ test:
 
 about:
   home: http://propka.org
-  license: LGPL-2.1
+  license: LGPL-2.1-only
   license_file: LICENSE
   summary: Heuristic pKa calculations with ligands
   dev_url: https://github.com/jensengroup/propka
