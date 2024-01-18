@@ -10,19 +10,16 @@ source:
   sha256: d8083b58d8c4c553ff8704c706190fe37ff82253adcd6e53b31d8ad7d6d52257
 
 build:
-  skip: true  # [py2k]
-  number: 0
   entry_points:
     - propka3 = propka.run:main
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - pip
     - python
+    - pip
   run:
     - python
 
@@ -31,17 +28,16 @@ test:
     - propka
     - tests
   commands:
+    - pip check
     - propka3 --help
   requires:
+    - pip
     - numpy
-    - pandas
     - pytest
-    - setuptools
 
 about:
   home: http://propka.org
-  license: GNU Lesser General Public v2 (LGPLv2)
-  license_family: LGPL
+  license: LGPL-2.1
   license_file: LICENSE
   summary: Heuristic pKa calculations with ligands
   dev_url: https://github.com/jensengroup/propka
