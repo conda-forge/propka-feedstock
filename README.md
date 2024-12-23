@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/propka-feedstoc
 
 Home: http://propka.org
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-only
 
 Summary: Heuristic pKa calculations with ligands
 
